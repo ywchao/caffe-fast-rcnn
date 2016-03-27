@@ -66,7 +66,7 @@ void MultiLabelAccuracyLayer<Dtype>::Forward_cpu(
 
   Dtype sensitivity = (count_pos > 0) ? (tp / count_pos) : 0;
   Dtype specificity = (count_neg > 0) ? (tn / count_neg) : 0;
-  Dtype harmmean = ((count_pos + count_neg) > 0) ? 
+  Dtype harmmean = ((count_pos + count_neg) > 0) ?
       2 / (count_pos / tp + count_neg / tn) : 0;
   Dtype precission = (count > 0) ? ((tp + tn) / count) : 0;
   Dtype f1_score = (tp > 0) ? 2 * tp / (2 * tp + fp + fn) : 0;

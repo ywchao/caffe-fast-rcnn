@@ -112,9 +112,8 @@ static bool matchExt(const std::string & fn,
     return true;
   return false;
 }
-
-bool ReadImageToDatum(const string& filename, const int height, 
-    const int width, const bool is_color, const std::string& encoding, 
+bool ReadImageToDatum(const string& filename, const int height,
+    const int width, const bool is_color, const std::string& encoding,
     Datum* datum) {
   cv::Mat cv_img = ReadImageToCVMat(filename, height, width, is_color);
   if (cv_img.data) {
@@ -168,7 +167,7 @@ bool ReadImageToDatum(const string& filename, const std::vector<int> labels,
       return false;
     }
   } else {
-    return ReadImageToDatum(filename, height, width, is_color, encoding, 
+    return ReadImageToDatum(filename, height, width, is_color, encoding,
                             datum);
   }
 }
